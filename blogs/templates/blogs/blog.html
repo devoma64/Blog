@@ -1,0 +1,13 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+    <p>
+       <a href="{% url "blogs:blogs" %}"> {{blog.text}}</a>
+    </p>
+    {% for post in posts%}
+        <p>{{post.post}}</p>
+    {%empty%}
+        <p> Opps! not blog posts made yet for this blog</p>
+    {% endfor %}
+{% endblock content %}
+
